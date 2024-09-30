@@ -6,7 +6,22 @@ const whoops = require('whoops')
 
 const ERROR_NAME = 'BrowserlessError'
 
-const createBrowserlessError = opts => whoops(ERROR_NAME, opts)
+const createErrorFactory = opts => whoops(ERROR_NAME, opts)
+
+const markAsProcessed = error => {
+  Object.defineProperty(error, '__parsed', {
+    value: true,
+    writable: false,
+    enumerable: false,
+    configurable: false
+  })
+  return error
+}
+
+const createBrowserlessError = opts => {
+  const createError = createErrorFactory(opts)
+  return (...args) => markAsProcessed(createError(...args))
+}
 
 const browserlessError = {}
 
@@ -28,9 +43,12 @@ browserlessError.contextDisconnected = createBrowserlessError({
 })
 
 browserlessError.ensureError = rawError => {
+  if (rawError.__parsed) return rawError
+
   debug('ensureError', serializeError(rawError))
 
   const error = 'error' in rawError ? rawError.error : rawError
+
   const { message: errorMessage = '' } = error
 
   if (
@@ -64,4 +82,7 @@ browserlessError.ensureError = rawError => {
   return require('ensure-error')(error)
 }
 
+const isBrowserlessError = error => error.name === ERROR_NAME
+
 module.exports = browserlessError
+module.exports.isBrowserlessError = isBrowserlessError

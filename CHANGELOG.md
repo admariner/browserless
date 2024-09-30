@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [10.6.2](https://github.com/microlinkhq/browserless/compare/v10.6.1...v10.6.2) (2024-09-14)
+
+### Performance Improvements
+
+* **function:** avoid page template if it's not used ([#593](https://github.com/microlinkhq/browserless/issues/593)) ([d45585f](https://github.com/microlinkhq/browserless/commit/d45585fe3bc44bd19099e0d7dea56d24f9fafced))
+
+## [10.6.1](https://github.com/microlinkhq/browserless/compare/v10.6.0...v10.6.1) (2024-09-12)
+
+### Bug Fixes
+
+* **function:** pass timeout down ([7920429](https://github.com/microlinkhq/browserless/commit/7920429d71122941e77e41d20a64f02da6870f5a))
+
+# [10.6.0](https://github.com/microlinkhq/browserless/compare/v10.5.4...v10.6.0) (2024-09-12)
+
+### Features
+
+* **functions:** use isolated-function ([#591](https://github.com/microlinkhq/browserless/issues/591)) ([de8dad0](https://github.com/microlinkhq/browserless/commit/de8dad08a3a1f85fc0d9b8fd9ebf0c9982022a4b))
+
+### Performance Improvements
+
+* **errors:** avoid parse error twice ([#592](https://github.com/microlinkhq/browserless/issues/592)) ([6e3fb40](https://github.com/microlinkhq/browserless/commit/6e3fb40d0b8e558e5a7bc14cd960370a7b6c1c7d))
+
+## [10.5.4](https://github.com/microlinkhq/browserless/compare/v10.5.3...v10.5.4) (2024-09-03)
+
+**Note:** Version bump only for package browserless
+
+## [10.5.3](https://github.com/microlinkhq/browserless/compare/v10.5.2...v10.5.3) (2024-09-03)
+
+**Note:** Version bump only for package browserless
+
+## [10.5.2](https://github.com/microlinkhq/browserless/compare/v10.5.1...v10.5.2) (2024-08-13)
+
+**Note:** Version bump only for package browserless
+
 ## [10.5.1](https://github.com/microlinkhq/browserless/compare/v10.5.0...v10.5.1) (2024-05-28)
 
 **Note:** Version bump only for package browserless
